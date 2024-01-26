@@ -1,6 +1,6 @@
 import pickle
 import heapq
-from indexConstruction.preprocessor.preprocessor import Preprocessor
+from preprocessor.preprocessor import Preprocessor
 
 
 class PositionalPosting:

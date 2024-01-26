@@ -1,6 +1,6 @@
 from parsivar import FindStems
 
-from indexConstruction.preprocessor.utils import Normalizer, Tokenizer
+from preprocessor.utils import Normalizer, Tokenizer
 
 
 class Preprocessor:
