@@ -134,10 +134,6 @@ class Tokenizer:
         return list(filter(None, tokens))
 
 
-def stop_words_handler(in_string: str):
-    ...
-
-
 if __name__ == "__main__":
     s = "124 ي يآری سًژئأآة»]َُيك . جزء"
     print(Normalizer().invalid_character_handler(s))

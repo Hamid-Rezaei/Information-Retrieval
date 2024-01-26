@@ -77,16 +77,18 @@ class InvertedIndex:
     def __init__(self, documents):
         self.dictionary = {}  # token -> postings list
         self._create_inverted_index(documents)
-        self._deleteTheKMostRepeatedTerms(k=50)
-        self._create_champions_list(k=4)
+        # self._deleteTheKMostRepeatedTerms(k=50)
+        # self._create_champions_list(k=4)
 
     def _create_inverted_index(self, documents):
         for docID, document in documents.items():
+
             content = document['content']
             preprocessor = Preprocessor()
             tokens = preprocessor.preprocess(content)
 
             for position, token in enumerate(tokens):
+                print(docID)
                 if token not in self.dictionary.keys():
                     term = Term(docID, position)
                     self.dictionary[token] = term
@@ -112,7 +114,8 @@ class InvertedIndex:
             self._deleteTerm(item[1])
             k_most_repeated.append(item)
 
-        return [(-key, value) for key, value in k_most_repeated]
+        with open('k_most_repeated.txt', 'w') as file:
+            file.write(str([(-key, value) for key, value in k_most_repeated]))
 
     def getPostingList(self, term: str):
         if term not in self.dictionary:
