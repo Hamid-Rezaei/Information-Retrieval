@@ -21,6 +21,7 @@ REPLACE_MAP = {
     '\u2008': SPACE,
     '\u2009': SPACE,
     '\u200a': SPACE,
+    'و': SPACE,
     'ئ': 'ی',
     'ي': 'ی',
     'یٰ': 'ی',

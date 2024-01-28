@@ -1,6 +1,6 @@
 # import json
 #
-# from positionalInvertedIndex.inverted_index.inverted_index import InvertedIndex
+# from invertedIndex.inverted_index.inverted_index import InvertedIndex
 #
 # PATH = "D:\Data\Docs\\University\\term7\Inforamtion Retrieval\project\search_engine\Dataset\IR_data_news_12k.json"
 #
