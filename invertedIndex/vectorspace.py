@@ -27,3 +27,8 @@ def calculate_weights_for_all_terms(dictionary, collection_size):
         postings_list = dictionary[term].get_docs()
         for doc_id in postings_list:
             dictionary[term].calculate_weight(doc_id, collection_size)
+
+
+def calculate_idf_for_all_terms(pos_inv_index, collection_size):
+    for term, term_obj in pos_inv_index.items():
+        term_obj.calculate_idf(collection_size)

@@ -1,6 +1,6 @@
 import pickle
 
-from invertedIndex.vectorspace import calculate_tf_idf
+from invertedIndex.vectorspace import calculate_tf_idf, calculate_idf
 
 
 class Term:
@@ -10,6 +10,7 @@ class Term:
         self.term_freq_in_docs = {}
         self.weight_in_docs = {}
         self.champions_list = {}
+        self.idf = 0
 
     def create_champ_list(self, k):
         self.champions_list = dict(sorted(self.weight_in_docs.items(), key=lambda item: item[1], reverse=True)[:k])
@@ -21,6 +22,12 @@ class Term:
         self.weight_in_docs[doc_id] = calculate_tf_idf(
             self,
             doc_id,
+            collection_size
+        )
+
+    def calculate_idf(self, collection_size):
+        self.idf = calculate_idf(
+            self,
             collection_size
         )
 
